@@ -53,13 +53,13 @@
 
 - (void)publishWithMatchingMetadata {
     [self.client publish:@"test" toChannel:@"test" withMetadata:@{@"foo" : @"bar"} withCompletion:^(PNPublishStatus *status) {
-        NSLog(@"status: %@", status.debugDescription);
+        NSLog(@"publish status: %@", status.debugDescription);
     }];
 }
 
 - (void)publishWithNotMatchingMetadata {
     [self.client publish:@"test" toChannel:@"test" withMetadata:@{@"bar" : @"foo"} withCompletion:^(PNPublishStatus *status) {
-        NSLog(@"status: %@", status.debugDescription);
+        NSLog(@"publish status: %@", status.debugDescription);
     }];
 }
 
